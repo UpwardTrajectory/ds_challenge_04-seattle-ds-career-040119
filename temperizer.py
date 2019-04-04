@@ -23,4 +23,7 @@ def convert_k_to_c(temp_k):
     return temp_c if temp_c >= -273.15 else "Can't be colder than absolute zero."
 
 def convert_k_to_f(temp_k):
-    return convert_k_to_c(convert_c_to_f(temp_k)) 
+    try:
+        return convert_c_to_f(convert_k_to_c(temp_k)) 
+    except:
+        return "Can't be colder than absolute zero."
